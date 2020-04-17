@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #03040A; -fx-base: #03040A;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <center>
+      <AnchorPane fx:id="jarvis" onMouseClicked="#handleClick" opacity="0.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/12" xmlns:fx="http://javafx.com/fxml/1">
+
+         <background>
+            <Background>
+               <images>
+                  <BackgroundImage repeatX="NO_REPEAT" repeatY="NO_REPEAT">
+                     <image>
+                        <Image url="@../images/jarvis.gif" />
+                     </image>
+                     <position>
+                        <BackgroundPosition fx:constant="CENTER" />
+                     </position>
+                     <size>
+                        <BackgroundSize contain="true" />
+                     </size>
+                  </BackgroundImage>
+               </images>
+            </Background>
+         </background>
+         <BorderPane.margin>
+            <Insets bottom="100.0" top="100.0" />
+         </BorderPane.margin>
+
+      </AnchorPane>
+   </center>
+   <bottom>
+      <HBox alignment="BOTTOM_RIGHT" maxHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="200.0" BorderPane.alignment="BOTTOM_RIGHT">
+         <children>
+            <ImageView fx:id="starkIndustry" fitHeight="150.0" fitWidth="300.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/stark-industries-logo.png" />
+               </image>
+               <effect>
+                  <Glow level="1.0" />
+               </effect></ImageView>
+         </children>
+         <padding>
+            <Insets bottom="20.0" right="20.0" />
+         </padding></HBox>
+   </bottom>
+   <right>
+      <VBox alignment="TOP_RIGHT" maxWidth="-Infinity" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="TOP_RIGHT">
+         <padding>
+            <Insets right="20.0" />
+
+         </padding>
+         <AnchorPane fx:id="miniJarvis" onMouseClicked="#handleClick" opacity="0.0" prefHeight="300.0" prefWidth="250.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/12" xmlns:fx="http://javafx.com/fxml/1">
+
+            <background>
+               <Background>
+                  <images>
+                     <BackgroundImage repeatX="NO_REPEAT" repeatY="NO_REPEAT">
+                        <image>
+                           <Image url="@../images/jarvis.gif" />
+                        </image>
+                        <position>
+                           <BackgroundPosition fx:constant="DEFAULT" />
+                        </position>
+                        <size>
+                           <BackgroundSize contain="true" />
+                        </size>
+                     </BackgroundImage>
+                  </images>
+               </Background>
+            </background>
+            <BorderPane.margin>
+               <Insets bottom="100.0" top="100.0" />
+            </BorderPane.margin>
+
+         </AnchorPane>
+      </VBox>
+   </right>
+   <top>
+      <GridPane alignment="TOP_CENTER" maxHeight="300.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="1000.0" BorderPane.alignment="TOP_LEFT">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="60" />
+           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="60" />
+           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="60" />
+           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="60" />
+           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="60" />
+           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="60" />
+           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="60" />
+           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="60" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints />
+
+        </rowConstraints>
+         <children>
+            <ImageView fx:id="projectsBtn" fitHeight="80.0" fitWidth="120.0" onMouseClicked="#handleClick" opacity="0.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER">
+               <image>
+                  <Image url="@../images/boder-new.png" />
+               </image>
+               <effect>
+                  <Glow level="0.5" />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="protocolsBtn" fitHeight="80.0" fitWidth="120.0" layoutX="30.0" layoutY="415.0" onMouseClicked="#handleClick" opacity="0.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+               <image>
+                  <Image url="@../images/fridayBtn.png" />
+               </image>
+               <effect>
+                  <Glow level="0.5" />
+               </effect>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="30.0" top="30.0" />
+         </padding>
+      </GridPane>
+   </top>
+   <left>
+      <Pane maxWidth="-Infinity" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER" />
+   </left>
+</BorderPane>
