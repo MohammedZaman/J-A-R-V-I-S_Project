@@ -1,13 +1,8 @@
 package sample;
 
 import animatefx.animation.*;
-import com.sun.javafx.webkit.WebConsoleListener;
-import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.Image;
@@ -15,21 +10,16 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 
-import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-import sample.utils.JarvisAnimation;
-import sample.utils.JarvisSound;
+import sample.utils.animations.JarvisAnimation;
+import sample.utils.sounds.JarvisSound;
 
 import java.util.ResourceBundle;
-import java.util.Timer;
-import java.util.TimerTask;
 
 
 public class Controller implements Initializable {
@@ -109,19 +99,19 @@ public class Controller implements Initializable {
         } else if (e.getSource() == projectsBtn) {
             if(mark2Btn.getOpacity() == 0 && fridayBtn.getOpacity() == 0) {
                 jarvisSound.stop();
-                jarvisAnimation.loadSlideMenu(0, 100,2.5);
+                jarvisAnimation.loadSlideMenu(0, 200,2.5);
                 jarvisAnimation.unloadMainMenu(0,400,2.5);
             }
         } else if (e.getSource() == protocolsBtn) {
             if(mark2Btn.getOpacity() != 0 && fridayBtn.getOpacity() != 0) {
                 jarvisSound.stop();
-                jarvisAnimation.unloadSlideMenu(0, 100,2.5);
+                jarvisAnimation.unloadSlideMenu(0, 200,2.5);
             }
            // code to be added
         } else if (e.getSource() == systemBtn) {
             if(mark2Btn.getOpacity() != 0 && fridayBtn.getOpacity() != 0) {
                 jarvisSound.stop();
-                jarvisAnimation.unloadSlideMenu(0, 100,2.5);
+                jarvisAnimation.unloadSlideMenu(0, 200,2.5);
             }
             // code to be added
         }else if(e.getSource() == fridayBtn){
@@ -131,6 +121,8 @@ public class Controller implements Initializable {
                 new FadeIn(cnn).setSpeed(1).play();
                 jarvisSound.aINoise();
                 jarvisAnimation.minAndMaxJarvis(cnn);
+                jarvisAnimation.unloadSlideMenu(0,200,2.5);
+                jarvisAnimation.unloadMainMenu(0,200,2.5);
             }
         }else if(e.getSource() == mark2Btn){
             if (rootPane.getCenter() != projectsUI) {
@@ -139,7 +131,7 @@ public class Controller implements Initializable {
                 projectsUI.setCenter(showCase);
                 new SlideInUp(showCase).setSpeed(3).play();
                 new Pulse(showCase).setSpeed(1).play();
-                jarvisSound.boot1();
+                jarvisSound.boot5();
                 jarvisAnimation.minAndMaxJarvis(projectsUI);
 
             }
@@ -148,19 +140,27 @@ public class Controller implements Initializable {
     }
 
     public void buttonEnter(MouseEvent e) {
-
+        //jarvisSound.boot6();
         Glow glow = new Glow();
         glow.setLevel(1);
         if (e.getSource() == projectsBtn) {
             projectsBtn.setEffect(glow);
+            projectsBtn.setScaleX(1.1);
+            projectsBtn.setScaleY(1.1);
         } else if (e.getSource() == protocolsBtn) {
             protocolsBtn.setEffect(glow);
+            protocolsBtn.setScaleX(1.1);
+            protocolsBtn.setScaleY(1.1);
         }else if (e.getSource() == systemBtn) {
             systemBtn.setEffect(glow);
+            systemBtn.setScaleX(1.1);
+            systemBtn.setScaleY(1.1);
         }else{
             for(Node node : sideMenu.getChildren()){
                 if(e.getSource() == node){
                     node.setEffect(glow);
+                    node.setScaleX(1.1);
+                    node.setScaleY(1.1);
                 }
             }
         }
@@ -171,14 +171,22 @@ public class Controller implements Initializable {
         glow.setLevel(0.2);
         if (e.getSource() == projectsBtn) {
             projectsBtn.setEffect(glow);
+            projectsBtn.setScaleX(1);
+            projectsBtn.setScaleY(1);
         } else if (e.getSource() == protocolsBtn) {
             protocolsBtn.setEffect(glow);
+            protocolsBtn.setScaleX(1);
+            protocolsBtn.setScaleY(1);
         }else if (e.getSource() == systemBtn) {
             systemBtn.setEffect(glow);
+            systemBtn.setScaleX(1);
+            systemBtn.setScaleY(1);
         }else{
             for(Node node : sideMenu.getChildren()){
                 if(e.getSource() == node){
                     node.setEffect(glow);
+                    node.setScaleX(1);
+                    node.setScaleY(1);
                 }
             }
         }
@@ -189,6 +197,7 @@ public class Controller implements Initializable {
     // Set up
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        jarvisAnimation.BootUp();
         //before System Boot-up
         // F.R.I.D.A.Y Set Up
         cnn.setOpacity(0);
@@ -197,10 +206,9 @@ public class Controller implements Initializable {
         engine = cnn.getEngine();
         //engine.load("http://www.mohammedzaman.co.uk/jarvis-models/examples/war-machine.html"); // not working
         engine.load(new File("src/media/images/html/friday.html").toURI().toString());
-        rootPane.setCenter(cnn);
+        //rootPane.setCenter(cnn);
 
 
-        jarvisAnimation.BootUp();
 
 
         // Project UI

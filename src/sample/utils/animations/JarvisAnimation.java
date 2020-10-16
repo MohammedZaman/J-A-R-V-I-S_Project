@@ -1,4 +1,4 @@
-package sample.utils.Animations;
+package sample.utils.animations;
 
 import animatefx.animation.*;
 import javafx.collections.FXCollections;
@@ -11,7 +11,6 @@ import sample.utils.sounds.JarvisVoice;
 
 
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 
 public class JarvisAnimation {
 
@@ -36,15 +35,15 @@ public class JarvisAnimation {
         jarvisAnim.setOnFinished(e -> bootUp());
         jarvisAnim.play();
         loadMainMenu(6500,400,1.5);
-        loadSlideMenu(6500,100,1);
+        loadSlideMenu(6500,100,3);
 
 
 
 
         FadeInUpBig stark = new FadeInUpBig(controller.starkIndustry);
         stark.setSpeed(2);
-        stark.setOnFinished(e -> close());
-        stark.setDelay(new Duration(7000));
+        //stark.setOnFinished(e -> close());
+        stark.setDelay(new Duration(6500));
         stark.play();
 
     }
@@ -76,7 +75,7 @@ public class JarvisAnimation {
                 projects.setDelay(new Duration(startPoint));
                 projects.setSpeed(speed);
                 if ((i % 1) == 0) {
-                    projects.setOnFinished(e -> jarvisSound.boot2());
+                    projects.setOnFinished(e -> jarvisSound.boot6());
                 }
                 if (i == controller.topMenu.getChildren().size() - 1) {
                     projects.setOnFinished(e -> loadMainLock = false);
@@ -113,7 +112,7 @@ public class JarvisAnimation {
                 }
                 projects.setSpeed(speed);
                 if ((i % 1) == 0) {
-                    projects.setOnFinished(e -> jarvisSound.boot2());
+                    projects.setOnFinished(e -> jarvisSound.boot6());
                 }
                 if (i == projectsBtn.size() - 1) {
                     projects.setOnFinished(e -> unloadMainLock = false);
@@ -203,9 +202,9 @@ public class JarvisAnimation {
                 FadeOutLeft projects = new FadeOutLeft(node);
                 projects.setDelay(new Duration(startPoint));
                 projects.setSpeed(speed);
-                if ((i % 2) == 0) {
-                    projects.setOnFinished(e -> jarvisSound.boot2());
-                }
+//                if ((i % 2) == 0) {
+//                    projects.setOnFinished(e -> jarvisSound.boot6());
+//                }
                 if (i == projectsBtn.size() - 1) {
                     projects.setOnFinished(e -> unloadSideLock = false);
                 }
@@ -228,9 +227,9 @@ public class JarvisAnimation {
                 FadeInLeft projects = new FadeInLeft(node);
                 projects.setDelay(new Duration(startPoint));
                 projects.setSpeed(speed);
-                if ((i % 2) == 0) {
-                    projects.setOnFinished(e -> jarvisSound.boot2());
-                }
+//                if ((i % 2) == 0) {
+//                    projects.setOnFinished(e -> jarvisSound.boot6());
+//                }
                 if (i == controller.sideMenu.getChildren().size() - 1) {
                     projects.setOnFinished(e -> loadSideLock = false);
                 }

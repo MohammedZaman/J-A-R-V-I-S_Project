@@ -26,10 +26,6 @@
                </images>
             </Background>
          </background>
-         <BorderPane.margin>
-            <Insets bottom="100.0" top="100.0" />
-         </BorderPane.margin>
-
       </AnchorPane>
    </center>
    <bottom>
@@ -214,7 +210,55 @@
                   <Glow level="0.2" />
                </effect>
             </ImageView>
-            <ImageView fx:id="warBtn" fitHeight="80.0" fitWidth="140.0" layoutX="40.0" layoutY="95.0" onMouseClicked="#handleClick" onMouseEntered="#buttonEnter" onMouseExited="#buttonExit" opacity="0.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="7">
+            <ImageView fx:id="marklxxxvBtn" fitHeight="80.0" fitWidth="140.0" layoutX="40.0" layoutY="95.0" onMouseClicked="#handleClick" onMouseEntered="#buttonEnter" onMouseExited="#buttonExit" opacity="0.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="7">
+               <image>
+                  <Image url="@../media/images/buttons/project-buttons/mark85Btn.png" />
+               </image>
+               <effect>
+                  <Glow level="0.2" />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="ironSpiderBtn" fitHeight="80.0" fitWidth="140.0" layoutX="40.0" layoutY="107.0" onMouseClicked="#handleClick" onMouseEntered="#buttonEnter" onMouseExited="#buttonExit" opacity="0.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="8">
+               <image>
+                  <Image url="@../media/images/buttons/project-buttons/ironSpiderBtn.png" />
+               </image>
+               <effect>
+                  <Glow level="0.2" />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="ultronBtn" fitHeight="80.0" fitWidth="140.0" layoutX="40.0" layoutY="119.0" onMouseClicked="#handleClick" onMouseEntered="#buttonEnter" onMouseExited="#buttonExit" opacity="0.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="9">
+               <image>
+                  <Image url="@../media/images/buttons/project-buttons/ultronBtn.png" />
+               </image>
+               <effect>
+                  <Glow level="0.2" />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="mark1Btn" fitHeight="80.0" fitWidth="140.0" layoutX="40.0" layoutY="131.0" onMouseClicked="#handleClick" onMouseEntered="#buttonEnter" onMouseExited="#buttonExit" opacity="0.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="10">
+               <image>
+                  <Image url="@../media/images/buttons/project-buttons/mark-1-btn.png" />
+               </image>
+               <effect>
+                  <Glow level="0.2" />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="starkTowerBtn" fitHeight="80.0" fitWidth="140.0" layoutX="40.0" layoutY="143.0" onMouseClicked="#handleClick" onMouseEntered="#buttonEnter" onMouseExited="#buttonExit" opacity="0.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="11">
+               <image>
+                  <Image url="@../media/images/buttons/project-buttons/startTowerBtn.png" />
+               </image>
+               <effect>
+                  <Glow level="0.2" />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="starkSatBtn" fitHeight="80.0" fitWidth="140.0" layoutX="40.0" layoutY="155.0" onMouseClicked="#handleClick" onMouseEntered="#buttonEnter" onMouseExited="#buttonExit" opacity="0.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="12">
+               <image>
+                  <Image url="@../media/images/buttons/project-buttons/starkSatBtn.png" />
+               </image>
+               <effect>
+                  <Glow level="0.2" />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="warBtn" fitHeight="80.0" fitWidth="140.0" layoutX="40.0" layoutY="167.0" onMouseClicked="#handleClick" onMouseEntered="#buttonEnter" onMouseExited="#buttonExit" opacity="0.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="13">
                <image>
                   <Image url="@../media/images/buttons/project-buttons/war-machine.png" />
                </image>
